@@ -144,7 +144,7 @@ Para levantar el proyecto completo de manera rápida en su entorno local, siga l
 
 ### 1. Clonar el repositorio y acceder a la carpeta del backend
 ```bash
-git clone <url-del-repositorio> jobcol
+git clone https://github.com/SantiagoP67/JobColAPP.git
 cd jobcol/JOBCOL\ BackEnd
 ```
 
