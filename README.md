@@ -188,55 +188,6 @@ El archivo `.env` ubicado en la raíz de `JOBCOL BackEnd` contiene las variables
 * **NGROK_AUTHTOKEN**: Token de autenticación de Ngrok para habilitar túneles públicos.
 * **NGROK_DOMAIN**: Dominio estático gratuito asignado en su cuenta de Ngrok.
 
-### Plantilla de Archivo `.env` (Ejemplo Seguro)
-
-Puedes crear un archivo `.env` en la ruta `JOBCOL BackEnd/.env` y rellenar las siguientes variables utilizando tus valores correspondientes. **No compartas ni subas al repositorio este archivo con tus credenciales reales**:
-
-```env
-# ==========================================
-# CONFIGURACIÓN DE BASE DE DATOS (POSTGRES)
-# ==========================================
-POSTGRES_DB=jobcol_db
-POSTGRES_USER=jobcol
-POSTGRES_PASSWORD=tu_contraseña_segura
-
-# ==========================================
-# CONFIGURACIÓN DE BASE DE DATOS DE KEYCLOAK
-# ==========================================
-KEYCLOAK_DB=keycloak
-KEYCLOAK_DB_USER=keycloak
-KEYCLOAK_DB_PASSWORD=tu_contraseña_segura
-
-# ==========================================
-# CONFIGURACIÓN DE KEYCLOAK ADMIN
-# ==========================================
-KEYCLOAK_ADMIN=admin
-KEYCLOAK_ADMIN_PASSWORD=tu_contraseña_segura
-KEYCLOAK_URL=http://keycloak:8080
-KEYCLOAK_REALM=JobCol
-KEYCLOAK_CLIENT_ID=jobcol-backend
-
-# ==========================================
-# CONFIGURACIÓN DE NOTIFICACIONES POR CORREO
-# ==========================================
-MAIL_USERNAME=ejemplo@gmail.com
-MAIL_PASSWORD=tu_contraseña_de_aplicación_smtp
-
-# ==========================================
-# CONFIGURACIÓN DE INTELIGENCIA ARTIFICIAL
-# ==========================================
-GEMINI_API_KEY=tu_api_key_de_gemini
-GEMINI_URL=https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
-
-# ==========================================
-# CONFIGURACIÓN DE NGROK (TÚNEL PÚBLICO)
-# ==========================================
-NGROK_AUTHTOKEN=tu_token_de_ngrok
-NGROK_DOMAIN=tu-dominio.ngrok-free.dev
-```
-
----
-
 ## Puertos Utilizados
 
 El sistema distribuye la red de sus componentes mediante los siguientes puertos asignados al host y a los contenedores:
