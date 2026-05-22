@@ -1,0 +1,80 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 1rem;
+}
+
+.modal-content {
+  background-color: var(--surface-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  padding: 2.5rem 2rem;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ensure form elements inside modals don't overflow */
+.modal-content select,
+.modal-content input,
+.modal-content textarea {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.modal-content select {
+  width: 100% !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+  .modal-content {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    max-height: 92vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1.5rem 1rem;
+    padding-bottom: env(safe-area-inset-bottom, 1rem);
+    animation: slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Chips and flex containers should wrap properly */
+  .modal-content div[style*="flex-wrap"],
+  .modal-content .auth-form > div {
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

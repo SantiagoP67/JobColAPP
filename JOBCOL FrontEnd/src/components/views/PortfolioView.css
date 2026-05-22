@@ -1,0 +1,105 @@
+.portfolio-view-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.portfolio-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.new-post-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.portfolio-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.create-post-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.create-post-input-area {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.avatar-small {
+  width: 40px;
+  height: 40px;
+  background-color: #f1f5f9;
+  color: var(--text-main);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.create-post-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 2rem;
+  outline: none;
+  background-color: white;
+  transition: border-color 0.2s;
+}
+
+.create-post-input:focus {
+  border-color: var(--primary);
+}
+
+.create-post-actions {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 0.5rem;
+}
+
+.post-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  transition: background-color 0.2s;
+}
+
+.post-action-btn:hover {
+  background-color: #f8fafc;
+}
+
+.text-blue-500 { color: #3b82f6; }
+.text-purple-500 { color: #a855f7; }
+.text-green-500 { color: #22c55e; }
+
+/* In case FeedView doesn't export base post classes globally, redefine them here lightly or rely on inheritance if it's not modular CSS */
+
+@media (max-width: 640px) {
+  .portfolio-header-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

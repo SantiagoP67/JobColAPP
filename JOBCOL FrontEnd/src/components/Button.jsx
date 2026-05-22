@@ -1,0 +1,11 @@
+import React from 'react';
+import './Button.css';
+
+export default function Button({ children, variant = 'primary', className = '', ...props }) {
+  const baseClass = `btn btn-${variant} ${className}`;
+  return (
+    <button className={baseClass} {...props}>
+      {children}
+    </button>
+  );
+}
