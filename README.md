@@ -25,7 +25,6 @@
     * [Paso 3: Frontend (React + Vite)](#paso-3-frontend-react--vite)
 10. [Uso con Docker y Docker Compose](#uso-con-docker-y-docker-compose)
 11. [Scripts Disponibles](#scripts-disponibles)
-12. [Posibles Problemas y Soluciones](#posibles-problemas-y-soluciones)
 
 ---
 
