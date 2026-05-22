@@ -168,25 +168,72 @@ Abra el navegador en `http://localhost:5173`. El frontend se conectará con el s
 
 ## Configuración de Variables de Entorno
 
-El archivo `.env` ubicado en la raíz de `JOBCOL BackEnd` contiene las variables de entorno necesarias para configurar las credenciales, conexiones y servicios del sistema. A continuación, se detalla cada una de ellas:
+El archivo `.env` ubicado en la raíz de `JOBCOL BackEnd` contiene las variables de entorno necesarias para configurar las credenciales, conexiones y servicios de IA, base de datos y mensajería. A continuación, se detalla cada una de ellas:
 
-| Variable de Entorno | Descripción | 
-| :--- | :--- | :--- |
-| **POSTGRES_DB** | Nombre de la base de datos principal de la aplicación. | 
-| **POSTGRES_USER** | Usuario de la base de datos PostgreSQL principal. | 
-| **POSTGRES_PASSWORD** | Contraseña de acceso de PostgreSQL principal. | 
-| **KEYCLOAK_DB** | Nombre de la base de datos exclusiva para Keycloak. | 
-| **KEYCLOAK_DB_USER** | Usuario para la base de datos de Keycloak. | 
-| **KEYCLOAK_DB_PASSWORD** | Contraseña de la base de datos de Keycloak. | 
-| **KEYCLOAK_ADMIN** | Usuario administrador inicial para la consola de Keycloak. | 
-| **KEYCLOAK_ADMIN_PASSWORD**| Contraseña del usuario administrador de Keycloak. | 
-| **KEYCLOAK_URL** | URL interna/externa de acceso al servidor de Keycloak. | 
-| **KEYCLOAK_REALM** | Nombre del reino (Realm) de autenticación en Keycloak. | 
-| **KEYCLOAK_CLIENT_ID** | Identificador del cliente REST configurado en Keycloak. |
-| **MAIL_USERNAME** | Dirección de correo electrónico SMTP para envío de notificaciones. | 
-| **MAIL_PASSWORD** | Contraseña de aplicación generada para el servidor de correo. | 
-| **NGROK_AUTHTOKEN** | Token de autenticación de Ngrok para habilitar túneles públicos. | 
-| **NGROK_DOMAIN** | Dominio estático gratuito asignado en su cuenta de Ngrok. | 
+### Explicación de las Variables
+
+* **POSTGRES_DB**: Nombre de la base de datos principal de la aplicación.
+* **POSTGRES_USER**: Usuario de la base de datos PostgreSQL principal.
+* **POSTGRES_PASSWORD**: Contraseña de acceso de PostgreSQL principal.
+* **KEYCLOAK_DB**: Nombre de la base de datos exclusiva para Keycloak.
+* **KEYCLOAK_DB_USER**: Usuario para la base de datos de Keycloak.
+* **KEYCLOAK_DB_PASSWORD**: Contraseña de la base de datos de Keycloak.
+* **KEYCLOAK_ADMIN**: Usuario administrador inicial para la consola de Keycloak.
+* **KEYCLOAK_ADMIN_PASSWORD**: Contraseña del usuario administrador de Keycloak.
+* **KEYCLOAK_URL**: URL interna/externa de acceso al servidor de Keycloak.
+* **KEYCLOAK_REALM**: Nombre del reino (Realm) de autenticación en Keycloak.
+* **KEYCLOAK_CLIENT_ID**: Identificador del cliente REST configurado en Keycloak.
+* **MAIL_USERNAME**: Dirección de correo electrónico SMTP para envío de notificaciones.
+* **MAIL_PASSWORD**: Contraseña de aplicación generada para el servidor de correo.
+* **NGROK_AUTHTOKEN**: Token de autenticación de Ngrok para habilitar túneles públicos.
+* **NGROK_DOMAIN**: Dominio estático gratuito asignado en su cuenta de Ngrok.
+
+### Plantilla de Archivo `.env` (Ejemplo Seguro)
+
+Puedes crear un archivo `.env` en la ruta `JOBCOL BackEnd/.env` y rellenar las siguientes variables utilizando tus valores correspondientes. **No compartas ni subas al repositorio este archivo con tus credenciales reales**:
+
+```env
+# ==========================================
+# CONFIGURACIÓN DE BASE DE DATOS (POSTGRES)
+# ==========================================
+POSTGRES_DB=jobcol_db
+POSTGRES_USER=jobcol
+POSTGRES_PASSWORD=tu_contraseña_segura
+
+# ==========================================
+# CONFIGURACIÓN DE BASE DE DATOS DE KEYCLOAK
+# ==========================================
+KEYCLOAK_DB=keycloak
+KEYCLOAK_DB_USER=keycloak
+KEYCLOAK_DB_PASSWORD=tu_contraseña_segura
+
+# ==========================================
+# CONFIGURACIÓN DE KEYCLOAK ADMIN
+# ==========================================
+KEYCLOAK_ADMIN=admin
+KEYCLOAK_ADMIN_PASSWORD=tu_contraseña_segura
+KEYCLOAK_URL=http://keycloak:8080
+KEYCLOAK_REALM=JobCol
+KEYCLOAK_CLIENT_ID=jobcol-backend
+
+# ==========================================
+# CONFIGURACIÓN DE NOTIFICACIONES POR CORREO
+# ==========================================
+MAIL_USERNAME=ejemplo@gmail.com
+MAIL_PASSWORD=tu_contraseña_de_aplicación_smtp
+
+# ==========================================
+# CONFIGURACIÓN DE INTELIGENCIA ARTIFICIAL
+# ==========================================
+GEMINI_API_KEY=tu_api_key_de_gemini
+GEMINI_URL=https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+
+# ==========================================
+# CONFIGURACIÓN DE NGROK (TÚNEL PÚBLICO)
+# ==========================================
+NGROK_AUTHTOKEN=tu_token_de_ngrok
+NGROK_DOMAIN=tu-dominio.ngrok-free.dev
+```
 
 ---
 
